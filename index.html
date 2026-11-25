@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POLEMAN ARG SIMRACING | Turismo Carretera Old Gen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Chakra Petch"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            racing: {
+              dark: '#090b10',
+              card: '#111622',
+              border: '#1e2738',
+              red: '#e11d48',
+              redHover: '#be123c',
+              cyan: '#38bdf8',
+              gold: '#f59e0b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #090b10;
+      color: #f1f5f9;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(225, 29, 72, 0.08) 0%, transparent 45%);
+    }
+    .carbon-grid {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .skew-btn {
+      transform: skewX(-12deg);
+    }
+    .skew-btn > span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform: skewX(12deg);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-racing-red selection:text-white">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-racing-dark/90 backdrop-blur-md border-b border-racing-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 bg-racing-red rounded flex items-center justify-center font-display font-bold text-xl italic text-white shadow-lg shadow-racing-red/30 group-hover:scale-105 transition">
+          P
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg sm:text-xl tracking-wider uppercase text-white block leading-none">
+            POLEMAN <span class="text-racing-cyan">ARG</span>
+          </span>
+          <span class="text-[10px] tracking-[0.25em] text-slate-400 uppercase font-semibold">SimRacing League</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#categoria" class="hover:text-white transition">TC Old Gen</a>
+        <a href="#calendario" class="hover:text-white transition">Calendario</a>
+        <a href="#posiciones" class="hover:text-white transition">Posiciones</a>
+        <a href="#descargas" class="hover:text-white transition">Descargas</a>
+        <a href="#reglamento" class="hover:text-white transition">Reglamento</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- REEMPLAZÁ EL # POR TU LINK DE DISCORD -->
+        <a href="https://discord.com" target="_blank" class="bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg flex items-center gap-2 transition shadow-md shadow-[#5865F2]/20">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/></svg>
+          <span>Discord</span>
+        </a>
+        <!-- REEMPLAZÁ EL NÚMERO POR TU LINK DE GRUPO DE WHATSAPP -->
+        <a href="https://whatsapp.com" target="_blank" class="bg-[#25D366] hover:bg-[#1ebe5d] text-slate-950 text-xs sm:text-sm font-bold px-3.5 py-2 rounded-lg flex items-center gap-1.5 transition">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative carbon-grid border-b border-racing-border overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-racing-card border border-racing-border text-xs font-semibold tracking-wider uppercase text-racing-cyan">
+            <span class="w-2 h-2 rounded-full bg-racing-red animate-pulse"></span>
+            Temporada Oficial 2026 • Assetto Corsa PC
+          </div>
+
+          <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl uppercase italic tracking-tight leading-[1.05] text-white">
+            La pasión del <span class="text-transparent bg-clip-text bg-gradient-to-r from-racing-cyan via-white to-racing-cyan">Turismo Carretera</span> en pista virtual.
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Bienvenido a <strong class="text-white">POLEMAN ARG SIMRACING</strong>. Competencias semanales, carreras diarias y el campeonato oficial de <strong class="text-racing-red">TC Old Gen</strong> con las 4 marcas históricas de Argentina.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button onclick="openModal()" class="skew-btn bg-racing-red hover:bg-racing-redHover text-white font-display font-bold uppercase tracking-wider px-7 py-3.5 rounded shadow-lg shadow-racing-red/25 transition cursor-pointer">
+              <span>Inscribirme al Torneo</span>
+            </button>
+            <a href="#descargas" class="skew-btn bg-racing-card hover:bg-slate-800 border border-racing-border text-white font-display font-semibold uppercase tracking-wider px-6 py-3.5 rounded transition">
+              <span>Descargar Mods</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 pt-4 max-w-md border-t border-racing-border/70">
+            <div>
+              <div class="font-display font-bold text-2xl text-white">32</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider">Cupos por fecha</div>
+            </div>
+            <div>
+              <div class="font-display font-bold text-2xl text-racing-cyan">6 Fechas</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider">Torneo Apertura</div>
+            </div>
+            <div>
+              <div class="font-display font-bold text-2xl text-racing-red">4 Marcas</div>
+              <div class="text-xs text-slate-400 uppercase tracking-wider">Física Balanceada</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Widget: Próxima Fecha -->
+        <div class="lg:col-span-5">
+          <div class="bg-racing-card border border-racing-border rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+            <div class="h-1.5 w-full bg-gradient-to-r from-racing-cyan via-white to-racing-red absolute top-0 left-0"></div>
+            
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-widest text-racing-red bg-racing-red/10 px-2.5 py-1 rounded">Próxima Fecha • Fecha 1</span>
+              <span class="text-xs text-slate-400 font-medium">Hora Argentina (GMT-3)</span>
+            </div>
+
+            <h2 class="font-display font-bold text-2xl uppercase text-white mb-1">Autódromo Oscar y Juan Gálvez</h2>
+            <p class="text-sm text-slate-400 mb-5">Circuito N° 12 • Buenos Aires • 20 Vueltas Final</p>
+
+            <!-- Countdown -->
+            <div class="grid grid-cols-4 gap-2.5 mb-6 text-center">
+              <div class="bg-racing-dark border border-racing-border rounded-xl py-3">
+                <span id="cd-days" class="font-display font-bold text-2xl sm:text-3xl text-white block">04</span>
+                <span class="text-[10px] uppercase tracking-wider text-slate-400">Días</span>
+              </div>
+              <div class="bg-racing-dark border border-racing-border rounded-xl py-3">
+                <span id="cd-hours" class="font-display font-bold text-2xl sm:text-3xl text-white block">18</span>
+                <span class="text-[10px] uppercase tracking-wider text-slate-400">Horas</span>
+              </div>
+              <div class="bg-racing-dark border border-racing-border rounded-xl py-3">
+                <span id="cd-mins" class="font-display font-bold text-2xl sm:text-3xl text-racing-cyan block">45</span>
+                <span class="text-[10px] uppercase tracking-wider text-slate-400">Min</span>
+              </div>
+              <div class="bg-racing-dark border border-racing-border rounded-xl py-3">
+                <span id="cd-secs" class="font-display font-bold text-2xl sm:text-3xl text-racing-red block">12</span>
+                <span class="text-[10px] uppercase tracking-wider text-slate-400">Seg</span>
+              </div>
+            </div>
+
+            <!-- Cronograma -->
+            <div class="space-y-2.5 text-sm border-t border-racing-border pt-4 mb-5">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Práctica Oficial</span>
+                <span class="font-semibold text-white">21:00 hs</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Clasificación (10 min)</span>
+                <span class="font-semibold text-white">21:30 hs</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Series (5 vueltas c/u)</span>
+                <span class="font-semibold text-white">21:45 hs</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Carrera Final (20 vueltas)</span>
+                <span class="font-semibold text-racing-cyan">22:15 hs</span>
+              </div>
+            </div>
+
+            <a href="acmanager://" class="w-full block text-center bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-semibold text-sm py-3 rounded-xl transition">
+              Abrir en Content Manager (Servidor Oficial)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍA: TC OLD GEN -->
+  <section id="categoria" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-racing-cyan">Categoría Principal</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl uppercase italic text-white mt-1">Turismo Carretera Old Gen</h2>
+      </div>
+      <p class="text-sm text-slate-400 max-w-md">
+        Elegí tu marca histórica. Motores varilleros de 6 cilindros, caja secuencial y puesta a punto abierta para exprimir cada décima.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Ford -->
+      <div class="bg-racing-card border border-racing-border hover:border-blue-500/60 rounded-xl p-5 transition group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2.5 py-1 text-xs font-bold uppercase rounded bg-blue-500/15 text-blue-400">Ford</span>
+          <span class="text-xs text-slate-400">~470 HP</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white uppercase mb-2 group-hover:text-blue-400 transition">Ford Falcon TC</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Gran velocidad final en recta y estabilidad en curvones rápidos como Salotto.</p>
+        <div class="text-xs text-slate-300 border-t border-racing-border pt-3 flex justify-between">
+          <span>Tracción: Trasera</span>
+          <span>Peso: 1310 kg</span>
+        </div>
+      </div>
+
+      <!-- Chevrolet -->
+      <div class="bg-racing-card border border-racing-border hover:border-amber-500/60 rounded-xl p-5 transition group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2.5 py-1 text-xs font-bold uppercase rounded bg-amber-500/15 text-amber-400">Chevrolet</span>
+          <span class="text-xs text-slate-400">~470 HP</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white uppercase mb-2 group-hover:text-amber-400 transition">Chevrolet Chevy TC</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Excelente tracción a la salida de curvas lentas y paso firme en sectores trabados.</p>
+        <div class="text-xs text-slate-300 border-t border-racing-border pt-3 flex justify-between">
+          <span>Tracción: Trasera</span>
+          <span>Peso: 1310 kg</span>
+        </div>
+      </div>
+
+      <!-- Dodge -->
+      <div class="bg-racing-card border border-racing-border hover:border-orange-500/60 rounded-xl p-5 transition group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2.5 py-1 text-xs font-bold uppercase rounded bg-orange-500/15 text-orange-400">Dodge</span>
+          <span class="text-xs text-slate-400">~470 HP</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white uppercase mb-2 group-hover:text-orange-400 transition">Dodge GTX TC</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Aerodinámica agresiva, gran carga en el tren delantero y frenada muy estable.</p>
+        <div class="text-xs text-slate-300 border-t border-racing-border pt-3 flex justify-between">
+          <span>Tracción: Trasera</span>
+          <span>Peso: 1310 kg</span>
+        </div>
+      </div>
+
+      <!-- Torino -->
+      <div class="bg-racing-card border border-racing-border hover:border-emerald-500/60 rounded-xl p-5 transition group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="px-2.5 py-1 text-xs font-bold uppercase rounded bg-emerald-500/15 text-emerald-400">Torino</span>
+          <span class="text-xs text-slate-400">~470 HP</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-white uppercase mb-2 group-hover:text-emerald-400 transition">Torino Cherokee TC</h3>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4">Equilibrio general en curvas de media velocidad y respuesta contundente en bajas.</p>
+        <div class="text-xs text-slate-300 border-t border-racing-border pt-3 flex justify-between">
+          <span>Tracción: Trasera</span>
+          <span>Peso: 1310 kg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO Y CARRERAS DIARIAS -->
+  <section id="calendario" class="py-16 bg-racing-card/40 border-y border-racing-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-racing-red">Cronograma</span>
+          <h2 class="font-display font-bold text-3xl uppercase italic text-white mt-1">Calendario Torneo & Diarias</h2>
+        </div>
+
+        <div class="flex gap-2">
+          <button onclick="filterCalendar('all')" id="cal-all" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-racing-red text-white cursor-pointer">Todas</button>
+          <button onclick="filterCalendar('proxima')" id="cal-proxima" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-racing-card border border-racing-border text-slate-300 hover:text-white cursor-pointer">Próximas</button>
+          <button onclick="filterCalendar('diaria')" id="cal-diaria" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-racing-card border border-racing-border text-slate-300 hover:text-white cursor-pointer">Carreras Diarias</button>
+        </div>
+      </div>
+
+      <div id="calendar-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Renderizado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLA DE POSICIONES -->
+  <section id="posiciones" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-racing-cyan">Campeonato Apertura</span>
+        <h2 class="font-display font-bold text-3xl uppercase italic text-white mt-1">Tabla de Posiciones</h2>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <select id="brand-filter" onchange="renderStandings()" class="bg-racing-card border border-racing-border text-sm text-white rounded-lg px-3 py-2 focus:outline-none focus:border-racing-cyan">
+          <option value="ALL">Todas las marcas</option>
+          <option value="Ford">Ford</option>
+          <option value="Chevrolet">Chevrolet</option>
+          <option value="Dodge">Dodge</option>
+          <option value="Torino">Torino</option>
+        </select>
+
+        <button onclick="toggleAdmin()" id="admin-toggle-btn" class="bg-racing-card hover:bg-slate-800 border border-racing-
